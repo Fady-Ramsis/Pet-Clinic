@@ -9,6 +9,7 @@ public class PetClinicProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicProjectApplication.class, args);
 		System.out.println("asdasd");
+		System.out.println("new ");
 	}
 
 }
