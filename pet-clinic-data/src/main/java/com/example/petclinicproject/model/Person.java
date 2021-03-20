@@ -1,6 +1,6 @@
 package com.example.petclinicproject.model;
 
-public class Person {
+public class Person extends BaseEntity{
     private String firstName;
     private String lastNamem;
 
