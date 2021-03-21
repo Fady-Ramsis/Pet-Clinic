@@ -1,0 +1,48 @@
+package com.example.petclinicproject.bootstrap;
+
+import com.example.petclinicproject.model.Owner;
+import com.example.petclinicproject.model.Vet;
+import com.example.petclinicproject.services.OwnerServices;
+import com.example.petclinicproject.services.VetServices;
+import com.example.petclinicproject.services.map.OwnerServiceMap;
+import com.example.petclinicproject.services.map.VetServiceMap;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DataLoader implements CommandLineRunner {
+    private final OwnerServices ownerServices;
+    private final VetServices vetServices;
+    public DataLoader() {
+        ownerServices = new OwnerServiceMap();
+        vetServices = new VetServiceMap();
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        Owner owner1 = new Owner();
+        owner1.setId(1L);
+        owner1.setFirstName("fady");
+        owner1.setLastNamem("Ramsis");
+        ownerServices.save(owner1);
+
+        Owner owner2 = new Owner();
+        owner1.setId(2L);
+        owner1.setFirstName("david");
+        owner1.setLastNamem("Ramsis");
+        ownerServices.save(owner2);
+
+        Vet vet1 = new Vet();
+        vet1.setId(1L);
+        vet1.setFirstName("ano");
+        vet1.setLastNamem("ashraf");
+        vetServices.save(vet1);
+
+        Vet vet2 = new Vet();
+        vet1.setId(2L);
+        vet1.setFirstName("mina");
+        vet1.setLastNamem("ashraf");
+        vetServices.save(vet2);
+
+    }
+}
