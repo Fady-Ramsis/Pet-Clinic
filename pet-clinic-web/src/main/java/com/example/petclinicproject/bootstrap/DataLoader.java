@@ -1,15 +1,16 @@
 package com.example.petclinicproject.bootstrap;
 
-import com.example.petclinicproject.model.*;
-import com.example.petclinicproject.services.*;
+import com.example.petclinicproject.model.Owner;
+import com.example.petclinicproject.model.Vet;
+import com.example.petclinicproject.services.OwnerServices;
+import com.example.petclinicproject.services.VetServices;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-    private final OwnerServices ownerServices ;
+    private final OwnerServices ownerServices;
     private final VetServices vetServices;
-
     public DataLoader(OwnerServices ownerServices, VetServices vetServices) {
 
         this.ownerServices = ownerServices;
