@@ -1,6 +1,7 @@
 package com.example.petclinicproject.bootstrap;
 
 import com.example.petclinicproject.model.Owner;
+import com.example.petclinicproject.model.Pet;
 import com.example.petclinicproject.model.PetType;
 import com.example.petclinicproject.model.Vet;
 import com.example.petclinicproject.services.OwnerServices;
@@ -8,6 +9,8 @@ import com.example.petclinicproject.services.PetTypeService;
 import com.example.petclinicproject.services.VetServices;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -34,12 +37,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("fady");
         owner1.setLastNamem("Ramsis");
+        owner1.setAddress("miami");
+        owner1.setCity("newyork");
+        owner1.setTelephone("212348789");
         ownerServices.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setFirstName("david");
-        owner1.setLastNamem("Ramsis");
+        owner2.setFirstName("david");
+        owner2.setLastNamem("Ramsis");
+        owner2.setAddress("san andreas");
+        owner2.setCity("paris");
+        owner2.setTelephone("7875646");
         ownerServices.save(owner2);
+
+        Pet mika = new Pet();
+        mika.setPetType(savedCatPetType);
+        mika.setBirthdate(LocalDate.now());
+        mika.setOwner(owner2);
+        mika.setName("mika");
+        owner2.getPets().add(mika);
+
+        Pet doga = new Pet();
+        mika.setPetType(savedDogPetType);
+        mika.setBirthdate(LocalDate.now());
+        mika.setOwner(owner1);
+        mika.setName("Doga");
+        owner1.getPets().add(doga);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("ano");
@@ -47,8 +70,8 @@ public class DataLoader implements CommandLineRunner {
         vetServices.save(vet1);
 
         Vet vet2 = new Vet();
-        vet1.setFirstName("mina");
-        vet1.setLastNamem("ashraf");
+        vet2.setFirstName("mina");
+        vet2.setLastNamem("ashraf");
         vetServices.save(vet2);
 
     }
