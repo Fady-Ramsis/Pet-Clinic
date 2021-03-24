@@ -3,6 +3,7 @@ package com.example.petclinicproject.services.map;
 import com.example.petclinicproject.model.BaseEntity;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
     protected Map<Long,T>map=new HashMap<>();
@@ -28,7 +29,7 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
         map.remove(id);
     }
     void delete(T object){
-        map.entrySet().removeIf(entry->entry.getValue().equals(object));
+        map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
     private Long getNextId(){
