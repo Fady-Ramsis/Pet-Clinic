@@ -58,6 +58,6 @@ public class OwnerSDJpaService implements OwnerServices {
      //   Error creating bean with name 'ownerRepository' defined in com.example.petclinicproject.repositories.OwnerRepository defined in @EnableJpaRepositories
      //   declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration
         //  return ownerRepository.findByLastName(lastName);
-        return null;
+       return null;
     }
 }
